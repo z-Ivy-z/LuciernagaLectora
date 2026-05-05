@@ -4,8 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <script src="script.js"></script>
+    <h1>Sistema de Libros</h1>
+
+    <label>Selecciona un libro:</label>
+    <select id="selectorLibro"></select>
+
+    <div id="infoLibro"></div>
+
+    <hr>
+
+    <h3>💬 Comentarios</h3>
+
+    <input type="text" id="comentarioInput" placeholder="Escribe un comentario">
+    <button onclick="agregarComentario()" class="commentButton">Agregar comentario</button>
+
+    <div id="listaComentarios"></div>
+
+    <script src="./script.js"></script>
 </body>
 </html>

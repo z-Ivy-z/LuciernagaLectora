@@ -1,0 +1,145 @@
+:root {
+
+    /* =========================
+        🔵 AZULES (CORE BRAND)
+    ========================== */
+
+    --blue-950: #000B58; /* base más profunda */
+    --blue-900: #00134f;
+    --blue-800: #00206a;
+    --blue-700: #003161; /* base secundaria */
+    --blue-600: #1a3f8a;
+    --blue-500: #2d57a6;
+    --blue-400: #4a73c2;
+    --blue-300: #7f9ee3;
+    --blue-200: #b3c7f5;
+    --blue-100: #e3ecff;
+
+    /* =========================
+        🟢 TEAL (ACENTOS / ACCIONES)
+    ========================== */
+
+    --teal-900: #003d3b;
+    --teal-800: #00524f;
+    --teal-700: #006A67; /* base */
+    --teal-600: #00807b;
+    --teal-500: #00a39c;
+    --teal-400: #2ccdc5;
+    --teal-300: #6ee7e1;
+    --teal-200: #a8f1ec;
+    --teal-100: #e6fffb;
+
+    /* =========================
+        🟡 AMARILLO (HIGHLIGHT / LUZ)
+    ========================== */
+
+    --yellow-900: #7a6a1f;
+    --yellow-800: #9c8629;
+    --yellow-700: #c2a734;
+    --yellow-600: #e0c548;
+    --yellow-500: #FDEB9E; /* base highlight */
+    --yellow-400: #fdf0b8;
+    --yellow-300: #fdf5cc;
+    --yellow-200: #fef8dc;
+    --yellow-100: #fffdf0;
+
+    /* =========================
+        ⚪ NEUTROS (UI CLEAN)
+    ========================== */
+
+    --gray-950: #0f172a;
+    --gray-900: #111827;
+    --gray-800: #1f2937;
+    --gray-700: #374151;
+    --gray-600: #4b5563;
+    --gray-500: #6b7280;
+    --gray-400: #9ca3af;
+    --gray-300: #d1d5db;
+    --gray-200: #e5e7eb;
+    --gray-100: #f3f4f6;
+    --gray-50:  #f9fafb;
+
+    /* =========================
+        🟢 ESTADOS (UI SYSTEM)
+    ========================== */
+
+    --success: #10b981;
+    --success-light: #d1fae5;
+
+    --warning: #f59e0b;
+    --warning-light: #fef3c7;
+
+    --error: #ef4444;
+    --error-light: #fee2e2;
+
+    --info: #3b82f6;
+    --info-light: #dbeafe;
+
+    /* =========================
+        🎯 USO SEMÁNTICO
+    ========================== */
+
+    --bg: var(--gray-50);
+    --surface: #ffffff;
+    --text: var(--gray-900);
+    --muted: var(--gray-500);
+    --border: var(--gray-200);
+
+    --primary: var(--blue-700);
+    --primary-dark: var(--blue-950);
+
+    --accent: var(--teal-700);
+    --accent-hover: var(--teal-600);
+
+    --highlight: var(--yellow-500);
+
+    /* =========================
+        🧱 UI EFFECTS
+    ========================== */
+
+    --shadow-sm: 0 2px 6px rgba(0,0,0,0.06);
+    --shadow-md: 0 6px 15px rgba(0,0,0,0.10);
+    --shadow-lg: 0 15px 30px rgba(0,0,0,0.15);
+
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+
+    --transition: 0.25s ease;
+}
+#selectorLibro{
+    color: rgb(67, 44, 1);
+    background-color: var(--yellow-400);
+    padding: 10px 10px;
+    border: none;
+    border-radius: 20px;
+}
+#comentarioInput{
+    padding: 10px 10px;
+    width: 300px;
+    border-radius: 20px;
+    border: 1px solid #007e7a;
+}
+.commentButton{
+    padding: 10px 10px;
+    width: 150px;
+    border-radius: 20px;
+    background-color: var(--yellow-400);
+    border: 1px solid var(--yellow-500);
+}
+.comentarioCard{
+    font-family: sans-serif;
+    background-color: var(--yellow-100);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: var(--shadow-sm);
+}
+.comentarioCard button{
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: var(--error);
+    color: white;
+    border: none;
+    margin-top: 5px;
+}
