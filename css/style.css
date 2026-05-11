@@ -1,0 +1,57 @@
+:root{
+    --c1:#1E104E;
+    --c2:#452E5A;
+    --c3:#FF653F;
+    --c4:#FFC85C;
+    --c5:#EFD2B0;
+    --c6:#547792;
+    --c7:#1A3263;
+    /* *colores del logo aproximados */
+    --l1:#a2e9f3;
+    --l2:#848bf2;
+    --l3:#ff914d;
+    --l4:#f9ac97;
+    --l5:#FFEE95;
+}
+header{
+    align-items: center;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: var(--c1);
+}
+.logo{
+    height: 100px;
+    width: 200px;
+}
+.navBar ul{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    gap: 20px;
+}
+.main-libreria{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+}
+.registro{
+    background-color: var(--l5);
+    color: var(--c1);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.iniciarSesion{
+    background-color: var(--l1);
+    color: var(--c1);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.main{
+    padding: 10px 20px;
+}

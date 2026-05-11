@@ -1,0 +1,115 @@
+:root{
+    --c1:#1E104E;
+    --c2:#452E5A;
+    --c3:#FF653F;
+    --c4:#FFC85C;
+    --c5:#EFD2B0;
+    --c6:#547792;
+    --c7:#1A3263;
+    /* *colores del logo aproximados */
+    --l1:#a2e9f3;
+    --l2:#848bf2;
+    --l3:#ff914d;
+    --l4:#f9ac97;
+    --l5:#FFEE95;
+}
+*{
+    font-family: sans-serif;
+}
+#infoLibro{
+    width: 50%;
+}
+
+.libroCard {
+    width: fit-content;
+    display: flex;
+    gap: 20px;
+    border: 5px var(--c2) solid;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.imagenLibro {
+    flex: 0 0 auto; 
+}
+
+.imagenLibro img {
+    width: 150px;
+    border-radius: 15px;
+}
+
+.descripcionLibro {
+    flex: 1; 
+}
+/* Aarece el modal */
+.hidden {
+    display: none;
+}
+.librito{
+    font-size: 30px;
+    cursor: pointer;
+    filter: grayscale(100%);
+    transition: 0.2s;
+}
+
+.librito.activa{
+    filter: grayscale(0%);
+    transform: scale(1.2);
+}
+#listaComentarios{
+    width: 25%;
+    max-height: 450px;
+    overflow: auto;
+}
+.comentarioCard{
+    font-family: sans-serif;
+    color: white;
+    background-color: var(--c6);
+    border-radius: 20px;
+    padding: 20px 20px;
+    margin-bottom: 10px;
+}
+.comentarioCard button{
+    margin: 10px 20px 0px 0px;
+    padding: 10px 10px;
+    background-color: var(--c7);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+.comentarioTexto{
+    font-size: 18px;
+    color: var(--l1);
+}
+.commentButton{
+    background-color: var(--l2);
+    color: var(--c1);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.modal-content button{
+    background-color: var(--l3);
+    color: var(--c1);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#selectorLibro{
+    background-color: var(--l5);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 10px;
+}
+#comentarioModalInput{
+    width: 100%;
+    height: 100px;
+    border-radius: 20px;
+    border: 2px solid var(--c2);
+    padding: 10px;
+    font-family: sans-serif;
+}

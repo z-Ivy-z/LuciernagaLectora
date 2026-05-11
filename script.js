@@ -2,111 +2,47 @@ const libros = [
     {
         titulo: "El duque y yo",
         autor: "Julia Quinn",
+        dueño: "María López",
+        descripcion: "Puedes usar separadores y leerlo con calma, incluso compartirlo con los peques si lo cuidan 😊. Evita doblar páginas, escribir en él o dejarlo al alcance de comida y bebidas. Gracias por tratarlo con cariño; en casa los libros son para disfrutarse y también para cuidarse 📚💛",
         pasta: "Dura",
         edicion: "Coleccionista",
-        anio: 2004,
         estado: "DISPONIBLE",
-        capitulos: ["Inicio", "Macondo", "La familia Buendía"],
         imagen: "https://images.cdn2.buscalibre.com/fit-in/360x360/a1/c3/a1c3bc927b097d1b748fa09111f3119c.jpg",
         comentarios: [],
-
-        describirLibro: function () {
-            return `Portada: ${this.imagen}, Libro: ${this.titulo}, Pasta: ${this.pasta}, Edición: ${this.edicion}, Autor: ${this.autor}, Año: ${this.anio}, Estado: ${this.estado}`;
-        },
-
-        agregarCapitulo: function (capitulo) {
-            this.capitulos.push(capitulo);
-        },
-
-        eliminarCapitulo: function (capitulo) {
-            const index = this.capitulos.indexOf(capitulo);
-            if (index !== -1) {
-                this.capitulos.splice(index, 1);
-            }
-        }
     },
     {
         titulo: "Yo antes de ti",
         autor: "Jojo Moyes",
+        dueño: "Javier Martínez",
+        descripcion: "Se permite el uso de separadores, tomar notas en hojas aparte y transportar el libro con cuidado. No se permite doblar páginas, escribir sobre el contenido ni exponerlo a líquidos o suciedad. Agradezco que lo devuelvas en las mismas condiciones; los libros, bien cuidados, pueden disfrutarse por muchos más lectores.",
         pasta: "Blanda",
         edicion: "Básica",
-        anio: 2012,
         estado: "PRESTADO",
-        capitulos: ["El aviador", "El planeta B-612", "El zorro"],
         imagen: "https://m.media-amazon.com/images/I/713KAcGeQcL.jpg",
         comentarios: [],
-
-        describirLibro: function () {
-            return `Libro: ${this.titulo}, Pasta: ${this.pasta}, Edición: ${this.edicion}, Autor: ${this.autor}, Año: ${this.anio}, Estado: ${this.estado}`;
-        },
-
-        agregarCapitulo: function (capitulo) {
-            this.capitulos.push(capitulo);
-        },
-
-        eliminarCapitulo: function (capitulo) {
-            const index = this.capitulos.indexOf(capitulo);
-            if (index !== -1) {
-                this.capitulos.splice(index, 1);
-            }
-        }
     },
     {
         titulo: "El color de las cosas invisibles",
         autor: "Andrea Longarela",
+        dueño: "Jade Carmona",
+        descripcion: "Puedes usar post-it y marcatextos para señalar partes importantes 📚, pero NO arrancar hojas ni maltratar el libro. Gracias por cuidarlo 💕, ojalá lo disfrutes tanto como yo ✨",
         pasta: "Dura",
         edicion: "Básica",
-        anio: 2023,
         estado: "PRESTADO",
-        capitulos: ["Inicio", "Sancho Panza", "Los molinos"],
         imagen: "https://m.media-amazon.com/images/I/816UgxSBR-L._UF1000,1000_QL80_.jpg",
         comentarios: [],
-
-        describirLibro: function () {
-            return `Libro: ${this.titulo}, Pasta: ${this.pasta}, Edición: ${this.edicion}, Autor: ${this.autor}, Año: ${this.anio}, Estado: ${this.estado}`;
-        },
-
-        agregarCapitulo: function (capitulo) {
-            this.capitulos.push(capitulo);
-        },
-
-        eliminarCapitulo: function (capitulo) {
-            const index = this.capitulos.indexOf(capitulo);
-            if (index !== -1) {
-                this.capitulos.splice(index, 1);
-            }
-        }
     }
 ];
 
-function seleccionarLibro(indice) {
-    if (indice >= 0 && indice < libros.length) {
-        const libro = libros[indice];
-
-        console.log(libro.describirLibro());
-        console.log("Capítulos:");
-        console.log(libro.capitulos);
-
-        return libro; // importante para poder usarlo después
-    } else {
-        console.log("Libro no válido");
-        return null;
-    }
-}
-
-const libroElegido = seleccionarLibro(1);
-
-// Agregar capítulos
-libroElegido.agregarCapitulo("Nuevo capítulo agregado");
-console.log(libroElegido.capitulos);
-
-// Eliminar capítulos
-libroElegido.eliminarCapitulo("Macondo");
-console.log(libroElegido.capitulos);
-
+// =======================
+// VARIABLES GLOBALES
+// =======================
 let libroActual = 0;
+let rating = 0;
 
+// =======================
 // SELECTOR DE LIBROS
+// =======================
 const selector = document.getElementById("selectorLibro");
 
 libros.forEach((libro, index) => {
@@ -116,46 +52,100 @@ libros.forEach((libro, index) => {
     selector.appendChild(option);
 });
 
+// =======================
 // CAMBIO DE LIBRO
+// =======================
 selector.addEventListener("change", function () {
     libroActual = this.value;
     mostrarLibro();
 });
 
-// MOSTRAR LIBRO EN HTML
+// =======================
+// MOSTRAR LIBRO
+// =======================
 function mostrarLibro() {
     const libro = libros[libroActual];
 
     document.getElementById("infoLibro").innerHTML = `
-        <img src="${libro.imagen}" alt="${libro.titulo}" 
-            style="width:250px; max-height:500px; object-fit:cover; border-radius:20px; margin-bottom:15px;">
+        <div class="libroCard">
+            <div class="imagenLibro">
+                <img src="${libro.imagen}" alt="${libro.titulo}">
+            </div>
 
-        <h2>${libro.titulo}</h2>
-        <p><strong>Autor:</strong> ${libro.autor}</p>
-        <p><strong>Año:</strong> ${libro.anio}</p>
-        <p><strong>Estado:</strong> ${libro.estado}</p>
+            <div class="descripcionLibro">
+                <h2>${libro.titulo}</h2>
+                <p><strong>Autor:</strong> ${libro.autor}</p>
+                <p><strong>Dueño:</strong> ${libro.dueño}</p>
+
+                <h3>Descripción:</h3>
+                <p>${libro.descripcion}</p>
+                <h4>Detalles:</h4>
+                <p><strong>Pasta:</strong> ${libro.pasta}</p>
+                <p><strong>Edición:</strong> ${libro.edicion}</p>
+                <p><strong>Estado:</strong> ${libro.estado}</p>
+            </div>
+        </div>
+        
     `;
 
     mostrarComentarios();
 }
 
-// AGREGAR COMENTARIO
-function agregarComentario() {
-    const input = document.getElementById("comentarioInput");
+// =======================
+// ABRIR / CERRAR MODAL
+// =======================
+function abrirModal() {
+    document.getElementById("modalComentario").classList.remove("hidden");
+}
+
+function cerrarModal() {
+    document.getElementById("modalComentario").classList.add("hidden");
+    document.getElementById("comentarioModalInput").value = "";
+    rating = 0;
+}
+
+// =======================
+// RATING
+// =======================
+function setRating(valor) {
+
+    rating = valor;
+
+    const libreria = document.querySelectorAll(".librito");
+
+    libreria.forEach((librito, index) => {
+
+        if(index < valor){
+            librito.classList.add("activa");
+        }else{
+            librito.classList.remove("activa");
+        }
+
+    });
+}
+
+// =======================
+// AGREGAR COMENTARIO (MODAL)
+// =======================
+function enviarComentario() {
+    const input = document.getElementById("comentarioModalInput");
     const texto = input.value;
 
     if (texto.trim() === "") return;
 
     libros[libroActual].comentarios.push({
-        texto: texto,
-        fecha: new Date().toLocaleString()
+        texto,
+        fecha: new Date().toLocaleString(),
+        rating
     });
 
-    input.value = "";
+    cerrarModal();
     mostrarComentarios();
 }
 
+// =======================
 // MOSTRAR COMENTARIOS
+// =======================
 function mostrarComentarios() {
     const contenedor = document.getElementById("listaComentarios");
     contenedor.innerHTML = "";
@@ -165,23 +155,42 @@ function mostrarComentarios() {
 
         div.innerHTML = `
             <div class="comentarioCard">
-                <p>${c.texto}</p>
+                <p class="comentarioTexto">${c.texto}</p>
+                <p>${"📖".repeat(c.rating || 0)}</p>
                 <small>${c.fecha}</small>
                 <br>
                 <button onclick="eliminarComentario(${index})">Eliminar</button>
             </div>
-
         `;
 
         contenedor.appendChild(div);
     });
 }
 
+// =======================
 // ELIMINAR COMENTARIO
+// =======================
 function eliminarComentario(index) {
     libros[libroActual].comentarios.splice(index, 1);
     mostrarComentarios();
 }
 
-// INICIALIZAR PRIMER LIBRO
+// =======================
+// FUNCIONES EXTRA (SE CONSERVAN)
+// =======================
+function seleccionarLibro(indice) {
+    if (indice >= 0 && indice < libros.length) {
+        const libro = libros[indice];
+        console.log(libro.describirLibro());
+        console.log("Capítulos:", libro.capitulos);
+        return libro;
+    } else {
+        console.log("Libro no válido");
+        return null;
+    }
+}
+
+// =======================
+// INICIALIZAR
+// =======================
 mostrarLibro();

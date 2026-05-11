@@ -4,25 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="css/style.css" >
+    <link rel="stylesheet" href="css/styleJs.css">
 </head>
 <body>
-    <h1>Sistema de Libros</h1>
+    <header class="navBar">
+        <img class="logo" src="./IMG/LuciernagaLectora (1)-Photoroom.png" alt="Luciérnaga Lectora">
+        <nav>
+            <ul>
+                <li>
+                    <a href=""> <button class="registro">Registrarse</button></a>
+                </li>
+                <li>
+                    <a href=""> <button class="iniciarSesion">Iniciar Sesion</button></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main">
+        <h1>Sistema de Libros</h1>
+        <label>Selecciona un libro:</label>
+        <select id="selectorLibro"></select>
+    </div>       
 
-    <label>Selecciona un libro:</label>
-    <select id="selectorLibro"></select>
-
-    <div id="infoLibro"></div>
-
-    <hr>
-
-    <h3>💬 Comentarios</h3>
-
-    <input type="text" id="comentarioInput" placeholder="Escribe un comentario">
-    <button onclick="agregarComentario()" class="commentButton">Agregar comentario</button>
-
-    <div id="listaComentarios"></div>
-
+    <div class="main-libreria">
+        <div id="infoLibro"></div>
+        <div id="listaComentarios"></div>
+        <div class="comment-comtainer">
+            <h3>💬 Comentarios</h3>
+            <button onclick="abrirModal()" class="commentButton">Agregar comentario</button>
+            <div id="modalComentario" class="modal hidden">
+                <div class="modal-content">
+                    <h2>💬 Nuevo comentario</h2>
+                    <p><b>Usuario:</b> Mariel</p>
+                    <!-- 📖 LIBRITOS -->
+                    <div id="libreria">
+                        <span  class="librito" onclick="setRating(1)">📖</span>
+                        <span class="librito" onclick="setRating(2)">📖</span>
+                        <span class="librito" onclick="setRating(3)">📖</span>
+                        <span class="librito" onclick="setRating(4)">📖</span>
+                        <span class="librito" onclick="setRating(5)">📖</span>
+                    </div>
+                    <!-- INPUT -->
+                    <textarea id="comentarioModalInput" placeholder="Escribe tu comentario"></textarea>
+                    <button onclick="enviarComentario()">Enviar</button>
+                    <button onclick="cerrarModal()">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script src="./script.js"></script>
 </body>
 </html>
